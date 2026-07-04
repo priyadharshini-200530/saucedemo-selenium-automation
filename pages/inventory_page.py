@@ -9,6 +9,10 @@ class InventoryPage(BasePage):
     cart_badge = (By.CLASS_NAME, "shopping_cart_badge")
     sort_dropdown = (By.CLASS_NAME, "product_sort_container")
     item_prices = (By.CLASS_NAME, "inventory_item_price")
+    cart_icon = (By.CLASS_NAME, "shopping_cart_link")
+
+    def go_to_cart(self):
+        self.click(self.cart_icon)
 
     def add_backpack_to_cart(self):
         self.click(self.add_to_cart_backpack)
