@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from pages.login_page import LoginPage
-
+from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
 
 @pytest.fixture()
 def driver():
@@ -20,3 +21,15 @@ def logged_in_driver(driver):
     login_page = LoginPage(driver)
     login_page.login("standard_user", "secret_sauce")
     return driver
+
+@pytest.fixture()
+def cart_page_checkout(logged_in_driver):
+    inventory_page = InventoryPage (logged_in_driver)
+    inventory_page.add_backpack_to_cart()
+    inventory_page.go_to_cart()
+
+    cart_page = CartPage(logged_in_driver)
+    cart_page.click_checkout()
+
+    return logged_in_driver
+
