@@ -78,5 +78,5 @@ Uses SauceDemo's publicly documented demo login:
 
 ## Author
 
-**Priyadharshini** — QA / Test Automation Engineer (Fresher)
+**Bandi Priyadharshini** — QA / Test Automation Engineer (Fresher)
 [GitHub Profile](https://github.com/priyadharshini-200530)
